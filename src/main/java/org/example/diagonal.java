@@ -12,15 +12,15 @@ public class diagonal {
         for (int i=0; i<r; i++){
             for (int j=0; j<r; j++){
                 if(i==j || i + j == r-1){
-                    duru[i][j] = 1;
+                    duru[i][j] = r;
                 }else {
                     duru[i][j] = 0;
                 }
             }
         }
-        for (int i=0; i<duru.length; i++){
-            for (int j=0; j<duru.length; j++){
-                System.out.printf("%-3d",duru[i][j]);
+        for (int i = 0; i < duru.length; i++) {
+            for (int j = 0; j < duru[i].length; j++) {
+                System.out.printf("%-3d ", duru[i][j]);
             }
             System.out.println();
         }

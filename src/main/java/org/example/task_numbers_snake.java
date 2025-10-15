@@ -5,33 +5,31 @@ import java.util.Scanner;
 public class task_numbers_snake {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        System.out.println("row: ");
-        int row = scn.nextInt();
-        System.out.println("col: ");
-        int col = scn.nextInt();
+        System.out.println("n: ");
+        int n = scn.nextInt();
 
-        int[][] d=new int[row][col];
-        int n= 1;
-        for(int i=0; i<row; i++) {
-            if (i % 2 == 0) {
-                for (int j = 0; j < col; j++) {
-                    d[i][j] = n++;
+        int[][] duru = new int[n][n];
+        int v= 0;
+        for(int j =0; j<n;j++){
+            if(j%2==0){
+                for(int i = 0;i<n;i++){
+                    duru[i][j] = v + (n-1-i);
                 }
-            }else{
-                    for (int j = 0; j < col; j++) {
-                        d[i][j] = n++;
-                    }
-            }
-            }
-            for (int i = 0; i < d.length; i++) {
-                for (int j = 0; j < d[i].length; j++) {
-                    System.out.printf("%-3d ", d[i][j]);
+            }else {
+                for(int i = 0;i<n;i++){
+                    duru[i][j] = v + i;
                 }
-                System.out.println();
             }
-            scn.close();
+            v +=10;
+        }
+        for (int i = 0; i < duru.length; i++) {
+            for (int j = 0; j < duru[i].length; j++) {
+                System.out.printf("%-3d ", duru[i][j]);
+            }
+            System.out.println();
+        }
+
     }
-
 }
 
 
